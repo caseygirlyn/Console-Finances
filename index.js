@@ -93,10 +93,16 @@ const total = finances.reduce((accumulator, currentValue) => accumulator + curre
 
 let averageChange = 0;
 let totalAverageChange = 0;
+let greatestIncrease = 0;
+let greatestIncreaseMonth = '';
 
 for (let i = 1; i < finances.length; i++) {
   let change = finances[i][1] - finances[i-1][1];
   averageChange += change;
+  if (change > greatestIncrease) {
+    greatestIncrease = change;
+    greatestIncreaseMonth = finances[i][0];
+  }
 }
 
 totalAverageChange = averageChange / (finances.length - 1);
@@ -106,3 +112,4 @@ console.log("----------------------------");
 console.log("Total Months: " + finances.length);
 console.log("Total: $" + total);
 console.log("Average Change: " + totalAverageChange.toFixed(2));
+console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")");
