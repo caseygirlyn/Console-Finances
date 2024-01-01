@@ -115,8 +115,18 @@ totalAverageChange = averageChange / (finances.length - 1);
 
 console.log("Financial Analysis");
 console.log("----------------------------");
+
+//Logs the total number of months included in the dataset.
 console.log("Total Months: " + finances.length);
+
+//Logs the net total amount of Profit/Losses over the entire period. 
 console.log("Total: $" + total);
+
+//Logs the average of the changes in Profit/Losses over the entire period.
 console.log("Average Change: " + totalAverageChange.toFixed(2));
+
+//Logs the greatest increase in profits (date and difference in the amounts) over the entire period.
 console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")");
+
+//Logs the greatest decrease in losses (date and difference in the amounts) over the entire period.
 console.log("Greatest Decrease in Profits/Losses: " + greatestDecreaseMonth + " ($" + greatestDecrease + ")");
