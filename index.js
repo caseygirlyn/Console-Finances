@@ -87,13 +87,22 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-let total = 0;
+//MDN Web Docs Array.prototype.reduce()
+const initialValue = 0; 
+const total = finances.reduce((accumulator, currentValue) => accumulator + currentValue[1], initialValue);
 
-for (let i = 0; i < finances.length; i++) {
-  total += finances[i][1];
+let averageChange = 0;
+let totalAverageChange = 0;
+
+for (let i = 1; i < finances.length; i++) {
+  let change = finances[i][1] - finances[i-1][1];
+  averageChange += change;
 }
+
+totalAverageChange = averageChange / (finances.length - 1);
 
 console.log("Financial Analysis");
 console.log("----------------------------");
 console.log("Total Months: " + finances.length);
 console.log("Total: $" + total);
+console.log("Average Change: " + totalAverageChange.toFixed(2));
