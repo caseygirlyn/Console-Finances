@@ -20,6 +20,10 @@ The task is to write JavaScript code to calculate following and log information 
 
 ![Home Page](./console_finances.png)
 
+## Link to Project
+
+The live version of this project can be found [here](https://caseygirlyn.github.io/Console-Finances/).
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
